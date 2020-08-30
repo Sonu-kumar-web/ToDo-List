@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>ToDo List</title>
+      <meta charset="UTF-8" />
+      <link
+         rel="stylesheet"
+         href="https://fonts.googleapis.com/css?family=Titillium+Web"
+      />
+      <link rel="stylesheet" href="Style/style.css" />
+   </head>
+
+   <body>
+      <div class="container">
+         <div class="input">
+            <input type="text" id="input-box" placeholder="Add a to-do" />
+         </div>
+         <div class="details-top">
+            <img src="assets/check.svg" width="30px" alt="" />
+            <p id="complete-task-top">Complete All</p>
+            <p id="clear-complete">Clear Complete</p>
+         </div>
+         <div class="content">
+            <ul id="list"></ul>
+         </div>
+         <div class="details-bottom" id="details-bottom-id">
+            <p id="all-task">All</p>
+            <p id="incomplete-task">Incomplete</p>
+            <p id="complete-task">Complete</p>
+            <p id="task-left">Task Left</p>
+         </div>
+      </div>
+      <script src="js/app.js"></script>
+   </body>
+</html>
