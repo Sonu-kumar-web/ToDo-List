@@ -72,24 +72,11 @@ list.addEventListener("click", function (event) {
    }
 });
 
-// complete to do
 function completeToDo(element) {
-   /*element.classList.toggle(CHECK); =>If tick class (CHECK) is not present in that img tag we get from elememt then it will add the tick class 
-    and if present it will remove the tick class from the img tag*/
    element.classList.toggle(CHECK);
-
-   /*element.classList.toggle(UNCHECK); =>If untick class (UNCHECK) is not present in that img tag we get from elememt then it will add the untick class 
-    and if present it will remove the untick class from the img tag*/
    element.classList.toggle(UN_CHECK);
-
-   /*Since we have to add the cross line to the text (p tag) and not add any class to img tag we are getting from the element we will
-    go to parent of img tag and then select the p tag using class name by quary selector and then select the p tag and add class lineThrough to that*/
-   /*On selecting first time it will add the class lineThrough to the p tag and on second time it will remove the class from there*/
    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-   //console.log(element.parentNode.querySelector(".text"));
 
-   /* If the done attribut is false we will set it to true when we enter in this if statement and if true then set it as false.
-     So that we can use it to display the uncomplete task and complete task on clicking*/
    LIST[element.id].done = LIST[element.id].done ? false : true;
    if (LIST[element.id].done) {
       num = num - 1;
@@ -101,18 +88,14 @@ function completeToDo(element) {
 
 // remove to do
 function removeToDo(element) {
-   //console.log(element.parentNode.parentNode);
-
-   /*We will first fo to the parent node of img tag i.e. li and then go to the ul and remove that li by doing removeChild(element.parentNode)*/
    element.parentNode.parentNode.removeChild(element.parentNode);
 
-   /*We will set trash as true after deleting that*/
    LIST[element.id].trash = true;
    num = num - 1;
    taskLeft();
 }
 
-/*------------------------------------------ complete task box-----------------------------------------------------------------*/
+// Complete task
 complete.addEventListener("click", function (event) {
    while (list.firstChild) {
       list.removeChild(list.firstChild);
@@ -129,8 +112,6 @@ function toDoDone(toDo, id, done, trash) {
    }
 
    if (done) {
-      //const DONE = done ? CHECK : UNCHECK;
-      //const LINE = done ? LINE_THROUGH : "";
       const item = `<li class="item">
                     <img class="${CHECK}" job="complete" id="${id}" alt="">
                     <p class="text ${LINE_THROUGH}">${toDo}</p>
@@ -141,8 +122,8 @@ function toDoDone(toDo, id, done, trash) {
       list.insertAdjacentHTML(position, item);
    }
 }
-/*-------------------------------------------------------------------------------------------------------------------*/
-/*------------------------------------------ incomplete task box-----------------------------------------------------------------*/
+
+// Incomplete Task
 incomplete.addEventListener("click", function (event) {
    while (list.firstChild) {
       list.removeChild(list.firstChild);
