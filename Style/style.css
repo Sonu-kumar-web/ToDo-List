@@ -130,7 +130,7 @@ body {
    max-width: 10%;
    border-radius: 50%;
 }
-.untick {
+.unTick {
    background-image: url("../assets/untick.svg");
    width: 30px;
    max-width: 10%;
