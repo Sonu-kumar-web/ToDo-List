@@ -37,20 +37,14 @@ document.addEventListener("keyup", function (event) {
 });
 
 function addToDo(toDo, id, done, trash) {
-   /*If trash is true we will Not display anything*/
    if (trash) {
       return;
    }
 
-   /*We will check if done is true or false. If done is true then we will render tick class in css(load tick svg)
-    which we have stored in CHECK variable else UNCHECK variable will load uncheck class in css.In the item below it*/
    const DONE = done ? CHECK : UN_CHECK;
 
-   /*We will check if done is true or false. If done is true then we will render lineThrough class in  css stored in 
-    LINE_THROUGH variable else NOTHING. It will take place in item present below*/
    const LINE = done ? LINE_THROUGH : "";
 
-   /*This item will contain/store the correct Html according to the value of DONE and Line (Written Logic  Above) */
    const item = `<li class="item">
                     <img class="${DONE}" job="complete" id="${id}" alt="">
                     <p class="text ${LINE}">${toDo}</p>
@@ -58,10 +52,8 @@ function addToDo(toDo, id, done, trash) {
                   </li>
                 `;
 
-   /*It will set the position where we will place the html*/
    const position = "beforeend";
 
-   /*Finally it will display the html in the ui using this in just after the where the id list ends i.e. ul which contains li*/
    list.insertAdjacentHTML(position, item);
    if (!done) {
       num = num + 1;
