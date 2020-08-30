@@ -140,8 +140,6 @@ function addToDoLeft(toDo, id, done, trash) {
    }
 
    if (!done) {
-      //const DONE = done ? CHECK : UNCHECK;
-      //const LINE = done ? LINE_THROUGH : "";
       const item = `<li class="item">
                     <img class="${UN_CHECK}" job="complete" id="${id}" alt="">
                     <p class="text">${toDo}</p>
@@ -152,9 +150,7 @@ function addToDoLeft(toDo, id, done, trash) {
       list.insertAdjacentHTML(position, item);
    }
 }
-/*-------------------------------------------------------------------------------------------------------------------*/
 
-/*------------------------------------------------Task Left------------------------------------------------------------*/
 function taskLeft() {
    var elem = document.getElementById("task-left");
    if (elem) {
@@ -165,7 +161,6 @@ function taskLeft() {
    detailsBottom.insertAdjacentHTML(position, taskLeft1);
 }
 
-/*---------------------------------All Task---------------------------------------------------------------------------*/
 all.addEventListener("click", function (event) {
    while (list.firstChild) {
       list.removeChild(list.firstChild);
@@ -175,8 +170,7 @@ all.addEventListener("click", function (event) {
       addToDo(item.name, item.id, item.done, item.trash);
    });
 });
-/*-------------------------------------------------------------------------------------------------------------------------*/
-/*----------------------------------------------------------Complete Task All--------------------------------------------- */
+
 completeTaskTop.addEventListener("click", function (event) {
    while (list.firstChild) {
       list.removeChild(list.firstChild);
@@ -189,7 +183,6 @@ completeTaskTop.addEventListener("click", function (event) {
    taskLeft();
 });
 
-/*-----------------------------------------------------------------CLEAR COMPLETE-------------------------------------------- */
 clearComplete.addEventListener("click", function (event) {
    while (list.firstChild) {
       list.removeChild(list.firstChild);
