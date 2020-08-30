@@ -15,23 +15,13 @@ const UN_CHECK = "unTick";
 const LINE_THROUGH = "lineThrough";
 var num = 0;
 
-// add an item to the list user the enter key.Handeling The keyup Event
 document.addEventListener("keyup", function (event) {
-   //console.log(event.keyCode);
-   //console.log(input.value);
-   /*Finding That key pressed of Enter Key or Not i.e if it is Enter key then only it will enter in this if block*/
    if (event.keyCode == 13) {
-      /*Input.va;ue will give the value present in the input box i.e string*/
       const toDo = input.value;
 
-      // if the input isn't empty. Means toDo will be true
       if (toDo) {
-         /*If toDo is true i.e. value is present in the input box then we will call the addToDo() function by 
-            passing the argument text,id,done and trash. Which will display it in the ui*/
          addToDo(toDo, id, false, false);
 
-         /*After the complition of addToDo() function control will come here.
-            If toDo is true i.e. value is present in the input box then we will add that to the LIST array along with id,done and trash*/
          LIST.push({
             name: toDo,
             id: id,
@@ -39,11 +29,9 @@ document.addEventListener("keyup", function (event) {
             trash: false,
          });
 
-         /*We will do id++ so that we can identify uniquely the list item*/
          id++;
       }
 
-      /*At last we will set the value od text present in the box to ""*/
       input.value = "";
    }
 });
