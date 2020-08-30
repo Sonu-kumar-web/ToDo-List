@@ -42,7 +42,6 @@ function addToDo(toDo, id, done, trash) {
    }
 
    const DONE = done ? CHECK : UN_CHECK;
-
    const LINE = done ? LINE_THROUGH : "";
 
    const item = `<li class="item">
@@ -61,23 +60,14 @@ function addToDo(toDo, id, done, trash) {
    taskLeft();
 }
 
-/*list is the id of the ul we have fetched in begning*/
 list.addEventListener("click", function (event) {
-   /*event.target will fetch the datails of the image tag weather it is image tag of tick,untick or trash and it will have the html of that*/
    const element = event.target;
 
-   /*It will give the job of the img tag we have written in item based on which we select i.e. complete or delete*/
    const elementJob = element.attributes.job.value;
-   //console.log('element.attributes.job.value==', element.attributes.job.value);
 
-   /*If the click is on img tag of job=complete then this logic will get executed*/
    if (elementJob == "complete") {
-      /*On clicking on that we will execute this completeToDo function by passing the relevent html i.e. img tag*/
       completeToDo(element);
-
-      /*If the click is on img tag of job=delete then this logic will get executed*/
    } else if (elementJob == "delete") {
-      /*On clicking on that we will execute this removeToDo function by passing the relevent html i.e. img tag*/
       removeToDo(element);
    }
 });
