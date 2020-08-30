@@ -3,6 +3,12 @@ body {
    margin: 0;
    background-color: rgba(0, 0, 0, 0.1);
    font-family: "Titillium Web", sans-serif;
+   background: rgb(128, 137, 145);
+   background: radial-gradient(
+      circle,
+      rgba(128, 137, 145, 1) 38%,
+      rgba(103, 128, 111, 1) 100%
+   );
 }
 
 .container {
